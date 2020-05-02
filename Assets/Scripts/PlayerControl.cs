@@ -1,44 +1,36 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public Rigidbody rb;
+    public Rigidbody rigidBody;
+    AnimationController animationController;
+
     public float forwardForce = 200f;
     public float sideForce = 500f;
-    public float zForce = 500f;
+    private float horizontal;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-
+        rigidBody = GetComponent<Rigidbody>();
+        animationController = GetComponent<AnimationController>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(0, 0, forwardForce * Time.fixedDeltaTime);
+        horizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey("d"))
+        if (animationController.IsAnimationPlaying("Run"))
         {
-            rb.AddForce(sideForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey("a"))
-        {
-            rb.AddForce(-sideForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey("w"))
-        {
-            rb.AddForce(0, 0, zForce * Time.fixedDeltaTime);
-        }
-        if (Input.GetKey("s"))
-        {
-            rb.AddForce(0, 0, -zForce * Time.fixedDeltaTime);
+            rigidBody.AddForce(0, 0, forwardForce * Time.fixedDeltaTime);
+            rigidBody.AddForce((transform.right * horizontal) * sideForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
 
-        if (rb.position.y < -1f)
+        if (rigidBody.position.y < 0.1f)
         {
+            animationController.animator.SetBool("IsFalling", true);
             FindObjectOfType<GameManager>().GameOver();
         }
     }
