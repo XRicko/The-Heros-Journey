@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public Rigidbody rigidBody;
-    AnimationController animationController;
+    [SerializeField]
+    private Rigidbody rigidBody;
 
+    PlayerAnimController animController;
     public float forwardForce = 200f;
-    public float sideForce = 500f;
+
+    [SerializeField]
+    private float sideForce = 500f;
+
     private float horizontal;
 
-    // Use this for initialization
+    // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        animationController = GetComponent<AnimationController>();
+        animController = GetComponent<PlayerAnimController>();
     }
 
     // Update is called once per frame
@@ -22,15 +26,15 @@ public class PlayerControl : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
 
-        if (animationController.IsAnimationPlaying("Run"))
+        if (animController.IsAnimationPlaying("Run"))
         {
             rigidBody.AddForce(0, 0, forwardForce * Time.fixedDeltaTime);
-            rigidBody.AddForce((transform.right * horizontal) * sideForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rigidBody.AddForce((transform.right * horizontal) * sideForce * Time.fixedDeltaTime, ForceMode.Impulse);
         }
 
         if (rigidBody.position.y < 0.1f)
         {
-            animationController.animator.SetBool("IsFalling", true);
+            animController.animator.SetBool("IsFalling", true);
             FindObjectOfType<GameManager>().GameOver();
         }
     }

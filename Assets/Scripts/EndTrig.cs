@@ -6,6 +6,7 @@ public class EndTrig : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        manager.Complete();
+        if (other.CompareTag("Player"))
+            manager.Complete();
     }
 }

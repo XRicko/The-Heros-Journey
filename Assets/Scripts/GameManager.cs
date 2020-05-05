@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameEnded = false;
-    public float restartDelay = 1.5f;
+    private bool gameEnded = false;
+
+    [SerializeField]
+    private float restartDelay = 1.5f;
+
     public GameObject completUI;
     public PlayerControl control;
 

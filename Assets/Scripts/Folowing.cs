@@ -3,7 +3,9 @@
 public class Folowing : MonoBehaviour
 {
     public Transform player;
-    public Vector3 offset;
+
+    [SerializeField]
+    private Vector3 offset = new Vector3(0, 2, 5);
 
     // Update is called once per frame
     void Update()

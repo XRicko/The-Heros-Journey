@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a584051787acff4f8d51a633cc7d004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartDelay: 2
+  restartDelay: 3.15
   completUI: {fileID: 0}
   control: {fileID: 0}
