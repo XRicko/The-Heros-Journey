@@ -90,9 +90,11 @@ MonoBehaviour:
   - {fileID: 3154364727871649962}
   obstaclePrefab: {fileID: 8393160914035419764, guid: 14e88cedfc7a75748b388500a0a65970,
     type: 3}
-  animController: {fileID: 0}
-  timeBeetwenSpawns: 0.3
-  spawnAmount: 10
+  animController: {fileID: 6604039539514485608, guid: 42fdd83e972da1548a307aed0d6ec450,
+    type: 3}
+  endless: 0
+  timeBeetwenSpawn: 1
+  rows: 3
 --- !u!1 &3154364727775581407
 GameObject:
   m_ObjectHideFlags: 0

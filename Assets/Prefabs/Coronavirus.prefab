@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 5014153101265705930}
   - component: {fileID: 4482641753361609924}
   - component: {fileID: -9111033429669060954}
+  - component: {fileID: -1639871291746983127}
   m_Layer: 0
   m_Name: Coronavirus
   m_TagString: Obstacle
@@ -457,7 +458,7 @@ Transform:
   m_GameObject: {fileID: 8393160914035419764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2258727295570227438}
   - {fileID: 4971216345140575182}
@@ -522,6 +523,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbe3e0c6b52ba043b1b80c256281be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1639871291746983127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393160914035419764}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a018179166d652d488716341106f3cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 1000
 --- !u!1 &8646925813902450725
 GameObject:
   m_ObjectHideFlags: 0
