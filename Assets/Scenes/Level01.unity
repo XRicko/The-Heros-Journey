@@ -480,6 +480,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5006512736637841375}
+    - target: {fileID: 1380484535259869612, guid: 6feda435ea8b52b48b664d807b659429,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051185448630675001, guid: 6feda435ea8b52b48b664d807b659429,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6feda435ea8b52b48b664d807b659429, type: 3}
 --- !u!1001 &1964832366486869620

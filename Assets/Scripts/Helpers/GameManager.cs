@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     {
         completUI.SetActive(true);
         control.enabled = false;
-        Player.forwardForce = 0;
         AudioManager.instance.DoOperation(AudioManager.instance.Stop, "Run");
     }
 

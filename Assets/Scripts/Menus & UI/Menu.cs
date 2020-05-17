@@ -27,4 +27,9 @@ public class Menu : MonoBehaviour
         LaunchEndless();
         GameManager.isLoadNeeded = true;
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
